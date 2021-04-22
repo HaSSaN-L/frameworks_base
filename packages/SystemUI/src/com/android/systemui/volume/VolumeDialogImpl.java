@@ -858,6 +858,7 @@ public class VolumeDialogImpl implements VolumeDialog,
                 }, 50));
         animator.translationX(getAnimatorX());
         animator.start();
+        mDialog.getViewTreeObserver().removeOnComputeInternalInsetsListener(mInsetsListener);
         checkODICaptionsTooltip(true);
         mController.notifyVisible(false);
         synchronized (mSafetyWarningLock) {
